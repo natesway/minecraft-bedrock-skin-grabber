@@ -19,13 +19,14 @@ jobs:
         go-version: 1.16
 
     - name: Build
-      run: go build -v ./...
+      run: go build -v src/main.go
+
 
     - name: Test
-      run: go test -v ./...
+      run: go test -v src/main.go
       
     - name: capture build artifacts
       uses: actions/upload-artifact@v2
       with:
         name: Artifacts
-        path: .
+        path: src/
